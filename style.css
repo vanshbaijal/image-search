@@ -1,64 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,200&display=swap');
-
-:root {
-    --primary-color: hwb(216 24% 15%);
-    --secondary-color: #333;
-    --background-color: #f9f9f9;
-    --box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-    --transition-duration: 0.3s;
-    --gradient-bg: linear-gradient(135deg, #e0f7fa 0%, #e0f2f1 100%);
-}
-
-* {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    line-height: 1.6;
-    background: var(--gradient-bg);
-    color: var(--secondary-color);
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(to right, #4CAF50, #2196F3);
+	color: #fff;
+}
+
+.app-container {
+	max-width: 900px;
+	margin: 50px auto;
+	padding: 20px;
+	background-color: rgba(255, 255, 255, 0.95);
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+header {
+	text-align: center;
+	margin-bottom: 20px;
 }
 
 h1 {
-    font-size: 48px;
-    font-weight: 600;
-    text-align: center;
-    margin: 40px 0 60px 0;
-    color: var(--primary-color);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+	margin: 0;
+	font-size: 3em;
+	font-weight: bold;
 }
 
-/* Styles for the form container */
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 60px;
+.search-bar {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-#search-input {
-    width: 60%;
-    max-width: 400px;
-    padding: 10px 20px;
-    border: none;
-    box-shadow: var(--box-shadow);
-    border-radius: 5px;
-    font-size: 18px;
-    color: var(--secondary-color);
-    transition: box-shadow var(--transition-duration);
+input {
+	padding: 20px;
+	border: 2px solid #FF4961;
+	font-size: medium;
+	border-radius: 15px;
+	width: 60%;
 }
 
-#search-input:focus {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    outline: none;
-}
-
-#search-button {
-    padding: 10px 20px;
-    background-color: var(--primary-color);
+button {
+	  padding: 10px 20px;
+    background-color: #FF595E;
     color: #fff;
     border: none;
     font-size: 18px;
@@ -69,97 +55,105 @@ form {
     transition: background-color var(--transition-duration), transform var(--transition-duration);
 }
 
-#search-button:hover {
-    background-color: #3d8b40;
-    transform: scale(1.05);
+button:hover {
+  transform: scale(1.05);
 }
 
-/* Cards styling */
-.search-results {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
 }
 
-.search-result {
-    margin-bottom: 60px;
-    width: 30%;
-    border-radius: 5px;
-    box-shadow: var(--box-shadow);
-    overflow: hidden;
-    cursor: pointer;
-    text-align: center;
-    background-color: #fff;
-    transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+.card {
+	flex: 0 0 calc(20% - 10px);
+	margin-bottom: 20px;
+	overflow: hidden;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	background: #fff;
+	transition: transform 0.3s ease;
+	display: flex;
+	flex-direction: column;
 }
 
-.search-result:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
-.search-result img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: opacity var(--transition-duration), transform var(--transition-duration);
+.card img {
+	width: 100%;
+	flex: 1;
+	object-fit: cover;
 }
 
-.search-result img:hover {
-    opacity: 0.8;
-    transform: scale(1.05);
+.load-more {
+	text-align: center;
+	margin-top: 20px;
 }
 
-.search-result a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    text-transform: capitalize;
-    font-size: 20px;
-    display: block;
-    padding: 10px;
-    transition: color var(--transition-duration);
+button {
+	padding: 10px 20px;
+	background: #FF595E;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1em;
 }
 
-.search-result a:hover {
-    color: var(--primary-color);
+button:hover {
+	background: linear-gradient(to right, #ff3550, #ff8826);
 }
 
-/* Styles for the show more button */
-#show-more-button {
-    display: block;
-    margin: 0 auto;
-    padding: 12px 24px;
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color var(--transition-duration), transform var(--transition-duration);
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 20px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Hover style for the show more button */
-#show-more-button:hover {
-    background-color: #3d8b40;
-    transform: scale(1.05);
+.modal-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 800px;
 }
 
-/* Responsiveness */
-@media screen and (max-width: 768px) {
-    .search-results {
-        padding: 20px;
-    }
-
-    .search-result {
-        width: 45%;
-    }
+.close {
+	color: #fff;
+	position: absolute;
+	top: 10px;
+	right: 25px;
+	font-size: 2em;
+	font-weight: bold;
+	cursor: pointer;
 }
 
-@media screen and (max-width: 480px) {
-    .search-result {
-        width: 90%;
-        justify-content: space-between;
-    }
+.close:hover,
+.close:focus {
+	color: #FF595E;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+@media(max-width: 800px) {
+	.card {
+		flex: 0 0 calc(50% - 10px);
+	}
+}
+
+@media(max-width: 600px) {
+	.card {
+		flex: 0 0 calc(100% - 10px);
+	}
 }
